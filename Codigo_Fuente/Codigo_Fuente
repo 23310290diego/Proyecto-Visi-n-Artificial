@@ -1,1 +1,41 @@
-//codigo fuente aqui
+import os
+from ultralytics import YOLO
+from roboflow import Roboflow
+
+def descargar_dataset():
+    # Descarga desde Roboflow (Asegúrate de proteger tu API key o dejarla como variable de entorno)
+    rf = Roboflow(api_key="WlphBUnpxzMpl2U0hjdK")
+    project = rf.workspace("seethrough").project("safety-helmet-817ux")
+    version = project.version(1)
+    dataset = version.download("yolov8")
+    return dataset
+
+def entrenar_modelo():
+    # 1. Cargar el modelo base nano
+    model = YOLO("yolov8n.pt")
+    
+    # 2. Entrenar por 20 épocas con el dataset de cascos
+    results = model.train(
+        data="Safety-Helmet-1/data.yaml",
+        epochs=20,
+        imgsz=640
+    )
+    return model
+
+def evaluar_y_predecir(imagen_ruta):
+    # 3. Cargar el mejor modelo entrenado
+    model_path = "runs/detect/train/weights/best.pt"
+    if os.path.exists(model_path):
+        model = YOLO(model_path)
+        # Hacer la predicción
+        results = model.predict(source=imagen_ruta, save=True, conf=0.4)
+        print(f"Resultados guardados en las carpetas de 'runs/detect/predict'")
+    else:
+        print("No se encontró el modelo entrenado. Ejecuta primero el entrenamiento.")
+
+if __name__ == "__main__":
+    # Flujo principal sugerido
+    print("Iniciando pipeline de Detección de Cascos...")
+    # descargar_dataset()
+    # entrenar_modelo()
+    # evaluar_y_predecir("personas_con_casco.jpg")
