@@ -58,14 +58,14 @@ python codigo_fuente/detectar_cascos.py personas_con_casco.jpg
  ```
 runs/detect/predict/
 ```
----
+
 
 ## 📈 Gráficas y Lotes de Entrenamiento (Evidencias)
 
 A continuación se muestran los resultados obtenidos durante el proceso de entrenamiento del modelo YOLOv8:
 
-![Resultados del Entrenamiento](labels.jpg)
+![Resultados del Entrenamiento](Carpeta_Evidencias/labels.jpg)
 
-![Lote de Entrenamiento 1](train_batch1.jpg)
+![Lote de Entrenamiento 1](Carpeta_Evidencias/train_batch1.jpg)
 
-![Lote de Entrenamiento 2](train_batch2.jpg)
+![Lote de Entrenamiento 2](Carpeta_Evidencias/train_batch2.jpg)
