@@ -60,7 +60,7 @@ runs/detect/predict/
 ```
 
 
-## 📈 Gráficas y Lotes de Entrenamiento (Evidencias)
+##  Gráficas y Lotes de Entrenamiento (Evidencias)
 
 A continuación se muestran los resultados obtenidos durante el proceso de entrenamiento del modelo YOLOv8:
 
