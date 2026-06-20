@@ -30,7 +30,7 @@ El sistema clasifica e identifica tres clases principales:
   * Umbral de confianza (Confidence Threshold): 0.40
  
 //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-## 🛠️ Instalación y Uso
+##  Instalación y Uso
 
 1. **Clonar el repositorio** desde GitHub:
 ```bash
